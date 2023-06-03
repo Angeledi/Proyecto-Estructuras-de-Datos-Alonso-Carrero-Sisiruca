@@ -15,15 +15,18 @@ public class Proyecto_Alonso_Carrero_Sisiruca_EDD_Secc2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Lista lista = new Lista();
-        lista.setUhead(new Usuario("pepito", 56));
-        lista.InsertFinal("@cosi", 24);
-        Grafo grafo = new Grafo(lista);
-        grafo.printGrafo();
-        grafo.printAdy();
-        Grafo grafo2= new Pruebas().leer_txt();
-        System.out.println(grafo2.printGrafo());
-        System.out.println(grafo2.printAdy());
+       
+        Grafo grafo= new Pruebas().leer_txt();
+        System.out.println(grafo.printGrafo());
+        System.out.println(grafo.printAdy());
+    //    grafo.amplitud();
+        System.out.println("");
+        System.out.println(grafo.islas_ReamplitudBfs());
+       // int is = grafo.islas_ReprofunDfs(grafo, 0,new boolean[grafo.getNumVerts()]);
+     //   System.out.println(is+"<");
+      System.out.println("");
+        int num = grafo.islas_ReprofunDfs(grafo);
+        System.out.println(num);
         
         
     }

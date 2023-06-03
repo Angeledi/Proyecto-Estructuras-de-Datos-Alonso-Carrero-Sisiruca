@@ -93,7 +93,6 @@ public class Grafo {
         }
 
         numVerts++;
-
     }
     
     public void aumentarVerticesInsertar(String name,  int number) {
@@ -110,8 +109,6 @@ public class Grafo {
 
         int Matrizaux[][] = getMatAd();
         int Matrizaux2[][] = new int[getNumVerts() + 1][getNumVerts() + 1];
-        //crea una nueva matriz con 1 espacio más para insertar en ella todo lo que ya estaba en la anterior, y procede a insertar el nuevo elemento
-
         for (int i = 0; i < getNumVerts(); i++) {
             for (int j = 0; j < getNumVerts(); j++) {
                 Matrizaux2[i][j] = Matrizaux[i][j];
@@ -139,7 +136,7 @@ public class Grafo {
         }
         return print;
     }
-//print con los nombres de los almacenes y sus adyacencias (A puede ir a tal y a tal, B puede ir a tal y tal etc)
+    
     public String printAdy() {
         String print = "";
         Usuario pointer_a = getList().getUhead();
@@ -164,11 +161,132 @@ public class Grafo {
         return print;
     }
 
-    public void AddArco(int a, int b, int peso) {
-
+    public void newArco(int a, int b, int peso) {
         getMatAd()[a][b] = peso;
         getMatAd()[b][a] = peso;
 
+    }
+    public void AddArcobynums(int num1, int num2, int peso){
+        int a = returnUsuariobynum(num1);
+        int b = returnUsuariobynum(num2);
+        getMatAd()[a][b] = peso;
+        getMatAd()[b][a] = peso;
+        
+    }
+    
+//    public String recorridoBFS(){
+//        int count = 0;
+//        int aux = numVerts;
+//        Cola cola= new Cola();
+//        boolean visitados []= new boolean[getNumVerts()];
+//        int v;
+//        String print="";
+//        //recorre el grafo
+//        for (int i = 0; i < getNumVerts(); i++) {
+//            if (!visitados[i]) {
+//                //modifica la cola para meterle el primer nodo recorrido y algun otro que no tenga adyacencia con i
+//                cola.encolar(i);
+//                //marca como visitado el nodo recorrido
+//                visitados[i]=true;
+//                while (!cola.isEmpty()) {        
+//                    //despacha los elementos para meterlos en el string y lo iguala a v para recorrer sus ady
+//                    v=cola.dispatch();
+//                   print+= returnUsuario(v).getName()+" "+returnUsuario(v).getU_num()+":\n";
+//                    for (int j = 0; j < getNumVerts(); j++) {
+//                        if (v!=j && getMatAd()[v][j]!=0 && !visitados[j]) {
+//                            cola.encolar(j);
+//                            visitados[j]=true;
+//                            count++;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        System.out.println(aux-count);
+//        return print;     }
+    
+    public int islas_ReamplitudBfs() {
+        int count = 0;
+        Cola cola = new Cola ();
+        boolean visitados [ ] = new boolean [getNumVerts()];
+        int vertice; //vértice actual
+        //Se inicializa el vector visitados [] a false
+        for (int i = 0; i < getNumVerts() ; i++)
+            visitados [i] = false;
+        //El recorrido en amplitud se inicia en cada vértice no visitado
+        for (int i = 0; i < getNumVerts() ; i++) {
+        //se pone en la cola el vértide de partida y se marca como visitado
+            if (!visitados [i]){
+                cola.encolar(i);
+                visitados [i] = true;
+                while (!cola.isEmpty()) {
+                    vertice = cola.dispatch(); //desencolar y tratar el vértice
+                    //y encolo los nodos adyacentes a v.
+                    for (int j = 0; j < getNumVerts() ; j++){
+                        if ((vertice !=j) && getMatAd()[vertice][j]!=0 && (!visitados [j])) {
+                            cola.encolar ( j );
+                            visitados [j] = true;
+                            count++;
+                        }
+                    }
+                }
+            }
+        }
+        return getNumVerts()- count;
+    }
+    
+//    public int islas_ReprofunDfs(Grafo g, int v, boolean [ ] visitados){
+//        int count = v;
+//        visitados [v] = true;
+//        System.out.println (v);
+//        for (int i = 0; i < numVerts; i++) {
+//            if (v != i && !visitados [i] && g.getMatAd()[v][i] != 0 ){
+//                recorrerProfundidad (g, i, visitados);}
+//                count++;
+//        
+//        }
+//        return getNumVerts()- v;
+//    }
+    
+    public void imprimirTabla () {
+        System.out.println ("La matriz contiene " + numVerts + " vértices: \n");
+        for (int i = 0; i < numVerts; i++) {
+            for (int j = 0; j < numVerts; j++) {
+             //   if (matAd[i][j])
+                    System.out.print ("1 ");
+             //   else System.out.print ("0 ");
+    
+}
+}
+}
+    //procedimiento recursivo
+    public void recorrerProfundidad (Grafo g, int v, boolean [ ] visitados) {
+        int count = 0;
+        //se marca el vértice v como visitado
+        visitados [v] = true;
+        //el tratamiento del vértice consiste únicamente en imprimirlo en pantalla
+        System.out.println (v);
+        //se examinan los vértices adyacentes a v para continuar el recorrido
+        for (int i = 0; i < numVerts; i++) {
+            if (v != i && !visitados [i] && g.getMatAd()[v][i] != 0 ){
+                recorrerProfundidad (g, i, visitados);}
+                count++;
+        }
+    }
+    
+   // procedimiento no recursivo
+    public int islas_ReprofunDfs (Grafo g) {
+        int count= 0;
+        boolean visitados [ ] = new boolean [g.getNumVerts()];
+        for (int i = 0; i < g.getNumVerts(); i++) //inicializar vector con campos false
+            visitados [i] = false;
+        for (int i = 0; i < g.getNumVerts(); i++) { //Relanza el recorrido en cada
+            if (!visitados [i]) {//vértice visitado
+                recorrerProfundidad (g, i, visitados);
+                count++;
+            }
+        }
+        return count;
     }
     
 }

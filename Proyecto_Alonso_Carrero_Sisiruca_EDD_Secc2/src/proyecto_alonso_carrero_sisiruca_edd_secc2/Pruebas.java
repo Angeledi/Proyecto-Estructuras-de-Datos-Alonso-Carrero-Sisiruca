@@ -27,7 +27,6 @@ public class Pruebas {
         archivo.showOpenDialog(null);
         File abre = archivo.getSelectedFile();
         try {
-
             FileReader fr = new FileReader(abre);
             BufferedReader br = new BufferedReader(fr);
             while ((line = br.readLine()) != null) {
@@ -35,7 +34,6 @@ public class Pruebas {
                     grafo_txt += line + "\n";
                 }
             }
-            System.out.println("Hola1");
             if (!"".equals(grafo_txt)) {
                 String[] grafo_split = grafo_txt.split("Relaciones\n");
 
@@ -48,25 +46,18 @@ public class Pruebas {
                         String nombreUsuario = Usuario[1];
                         usuarios.InsertFinal(nombreUsuario, u_number );
                     }
-                    System.out.println("Hola2");
                 }
-                System.out.println("Hola5");
                 String[] relaciones = grafo_split[1].split("\n");
-                Grafo grafoTemp= new Grafo(usuarios);
-                grafo = grafoTemp;
-                System.out.println("Hola6");
+                grafo = new Grafo(usuarios);
                 for (int i = 0; i < relaciones.length; i++) {
-                    System.out.println("Holatal");
                     String[] dato_re = relaciones[i].split(", ");
-                    grafo.AddArco(grafo.returnUsuariobynum(Integer.parseInt(dato_re[0])), grafo.returnUsuariobynum(Integer.parseInt(dato_re[1])), Integer.parseInt(dato_re[2]));
+                    grafo.newArco(grafo.returnUsuariobynum(Integer.parseInt(dato_re[0])), grafo.returnUsuariobynum(Integer.parseInt(dato_re[1])), Integer.parseInt(dato_re[2]));
                 }
-                System.out.println("Hola3");
             }
             br.close();
             JOptionPane.showMessageDialog(null, "lectura exitosa");
-            System.out.println("Hola4");
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "error");
+            JOptionPane.showMessageDialog(null, "Error en lectura de archivo");
 
         }
         return grafo;
