@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://graphstream-project.org/
+HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/638080/6189b980-c76d-11ea-8a77-4e8d23f5dbaf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230603%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230603T164510Z&X-Amz-Expires=300&X-Amz-Signature=d0beaabe8774ce724b14d879d74a95ca379411db7909f4d780dd442bc789bfd9&X-Amz-SignedHeaders=host&actor_id=113349448&key_id=0&repo_id=638080&response-content-disposition=attachment%3B%20filename%3Dgs-algo-2.0.jar&response-content-type=application%2Foctet-stream
