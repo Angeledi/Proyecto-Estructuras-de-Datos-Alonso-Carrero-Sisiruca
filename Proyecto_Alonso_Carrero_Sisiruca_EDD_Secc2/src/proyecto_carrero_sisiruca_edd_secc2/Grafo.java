@@ -293,4 +293,37 @@ public class Grafo {
         return listaPuentes;
     }
     
+    public String relacionesbyrecorridoBFS(){
+        //cola para guardar los elementos recorridos
+        Cola cola= new Cola();
+        boolean visitados []= new boolean[getNumVerts()];
+        int v;
+        String print="";
+        //recorre el grafo
+        for (int i = 0; i < getNumVerts(); i++) {
+            if (!visitados[i]) {
+                //modifica la cola para meterle el primer nodo recorrido y algun otro que no tenga adyacencia con i
+                cola.encolar(i);
+                //marca como visitado el nodo recorrido
+                visitados[i]=true;
+                while (!cola.isEmpty()) {        
+                    //despacha los elementos para meterlos en el string y lo iguala a v para recorrer sus ady
+                    v=cola.dispatch();
+                    //recorre las adyacencias del nodo
+                    for (int j = 0; j < getNumVerts(); j++) {
+                        //si el peso es != a 0 y el obviamos el posible camino existente de A a A, se toma como que hay adyacencia
+                        if (v!=j && getMatAd()[v][j]!=0 && !visitados[j]) {
+                            //guardamos el número del nodo de la matriz en la cola 
+                            cola.encolar(j);
+                            //marcamos como visitado
+                            visitados[j]=true;
+                            print+= returnUsuario(v).getU_num() +", "+ returnUsuario(j).getU_num()+", "+getMatAd()[v][j]+"\n";
+                        } else{}
+                    }
+                }
+            }
+        }
+        return print;
+    }
+    
 }

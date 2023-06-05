@@ -63,4 +63,39 @@ public class txt {
         return grafo;
     }
     
+    public void escribir_txt(Grafo grafo) {
+        //iniciar variables
+        JFileChooser archivo = new JFileChooser();
+        archivo.showSaveDialog(null);
+        File guarda = archivo.getSelectedFile();
+        String Usuarios_actuales = "Usuarios\n";
+        String relaciones = "Relaciones\n";
+        if (!grafo.isEmpty()) {
+            
+            Usuario aux = grafo.getList().getUhead();
+            //crea un pointer que recorre el grafo y añade la info en el string creado
+            for (int i = 0; i < grafo.getList().getSize(); i++) {
+                Usuarios_actuales += aux.getU_num()+", "+ aux.getName() + "\n";    
+                aux = aux.getNext();
+
+            }
+            //mete en el string con el metodo printgrafo, el cual ya le pone el formato debido a las adyacencias entre dos nodos
+            relaciones+=grafo.relacionesbyrecorridoBFS();
+            
+            
+        }
+        String total = Usuarios_actuales + relaciones;
+        try {
+            //escribe en el txt
+            PrintWriter pw = new PrintWriter(guarda);
+            pw.print(total);
+            pw.close();
+            JOptionPane.showMessageDialog(null, "guardado exitoso");
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "error");
+        }
+        
+    }
+    
 }

@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
  */
 public class Puentes extends javax.swing.JFrame {
 
-    private txt archivo = new txt();
     static Grafo grafo;
 
     /**
@@ -25,15 +24,7 @@ public class Puentes extends javax.swing.JFrame {
         this.grafo = grafo;
         setLocationRelativeTo(null);
 
-        Usuario pointer = grafo.getList().getUhead();
 
-        while (pointer != null) {
-            //recorre el grafo con un nodo aux pointer y se agregan las opciones en el jcombobox
-            option1.addItem(pointer.getName());
-            option2.addItem(pointer.getName());
-
-            pointer = pointer.getNext();
-        }
 
     }
 
@@ -65,13 +56,13 @@ public class Puentes extends javax.swing.JFrame {
                 showActionPerformed(evt);
             }
         });
-        jPanel1.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, -1));
+        jPanel1.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
         output.setColumns(20);
         output.setRows(5);
         jScrollPane1.setViewportView(output);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 430, 220));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 370, 160));
 
         salir.setText("Salir");
         salir.addActionListener(new java.awt.event.ActionListener() {
@@ -79,17 +70,17 @@ public class Puentes extends javax.swing.JFrame {
                 salirActionPerformed(evt);
             }
         });
-        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
+        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel2.setText("RedGrafo Usuarios");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 140, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 140, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 8)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 10)); // NOI18N
         jLabel10.setText("Lista de Puentes entre Usuarios de REDGRAFO");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 120, 20));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 250, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 370));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 420, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

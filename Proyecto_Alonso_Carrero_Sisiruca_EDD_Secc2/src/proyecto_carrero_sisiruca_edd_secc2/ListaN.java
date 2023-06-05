@@ -67,6 +67,7 @@ public class ListaN {
         NodoN pointer = getHead();
         for (int i = 0; i < getLength(); i++) {
             print += pointer.getElement() + "\n";
+            pointer = (NodoN) pointer.getNext();
         }
         return print;
     }

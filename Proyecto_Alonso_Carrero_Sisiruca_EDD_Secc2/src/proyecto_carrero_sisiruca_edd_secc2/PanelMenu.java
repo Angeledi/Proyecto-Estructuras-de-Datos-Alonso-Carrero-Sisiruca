@@ -15,6 +15,7 @@ public class PanelMenu extends javax.swing.JFrame {
 
     static Grafo grafo;
     private MostrarGrafo mostrarGrafo = null;
+    private txt archivo = new txt();
 
     /**
      * Creates new form PanelMenu
@@ -54,7 +55,7 @@ public class PanelMenu extends javax.swing.JFrame {
         ActualizarRepositorio = new javax.swing.JButton();
         CargarDatos = new javax.swing.JButton();
         Header = new javax.swing.JPanel();
-        CountIslas1 = new javax.swing.JButton();
+        showPuentes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -105,10 +106,10 @@ public class PanelMenu extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        CountIslas1.setText("Mostrar lista de Puentes");
-        CountIslas1.addActionListener(new java.awt.event.ActionListener() {
+        showPuentes.setText("Mostrar lista de Puentes");
+        showPuentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CountIslas1ActionPerformed(evt);
+                showPuentesActionPerformed(evt);
             }
         });
 
@@ -128,7 +129,7 @@ public class PanelMenu extends javax.swing.JFrame {
                     .addComponent(MostrarGrafo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ModificarGrafo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(CountIslas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CountIslas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(showPuentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(103, Short.MAX_VALUE)
@@ -147,7 +148,7 @@ public class PanelMenu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(CountIslas, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(CountIslas1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(showPuentes, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ActualizarRepositorio)
@@ -180,13 +181,16 @@ public class PanelMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_MostrarGrafoActionPerformed
 
     private void ActualizarRepositorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarRepositorioActionPerformed
-        // TODO add your handling code here:
+         int dialogResult = JOptionPane.showConfirmDialog(null, "¿Desea guardar los datos?");
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                archivo.escribir_txt(grafo);
+            } else   { }
     }//GEN-LAST:event_ActualizarRepositorioActionPerformed
 
     private void CargarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarDatosActionPerformed
 
         if (grafo == null) {
-            setGrafo(Funciones.leerTxt());
+            setGrafo(archivo.leer_txt());
             setMostrarGrafo(getGrafo());
         } else {
             int dialogResult = JOptionPane.showConfirmDialog(null, "¿Desea actualizar los datos?");
@@ -198,9 +202,12 @@ public class PanelMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CargarDatosActionPerformed
 
-    private void CountIslas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CountIslas1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CountIslas1ActionPerformed
+    private void showPuentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPuentesActionPerformed
+        Puentes window3 = new Puentes(getGrafo());
+        window3.show();
+        window3.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_showPuentesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,9 +248,9 @@ public class PanelMenu extends javax.swing.JFrame {
     private javax.swing.JButton ActualizarRepositorio;
     private javax.swing.JButton CargarDatos;
     private javax.swing.JButton CountIslas;
-    private javax.swing.JButton CountIslas1;
     private javax.swing.JPanel Header;
     private javax.swing.JButton ModificarGrafo;
     private javax.swing.JButton MostrarGrafo;
+    private javax.swing.JButton showPuentes;
     // End of variables declaration//GEN-END:variables
 }

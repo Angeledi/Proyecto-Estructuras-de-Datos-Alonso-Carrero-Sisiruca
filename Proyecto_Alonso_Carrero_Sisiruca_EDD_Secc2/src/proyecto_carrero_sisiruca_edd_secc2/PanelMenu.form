@@ -39,7 +39,7 @@
                   <Component id="MostrarGrafo" max="32767" attributes="0"/>
                   <Component id="ModificarGrafo" max="32767" attributes="0"/>
                   <Component id="CountIslas" max="32767" attributes="0"/>
-                  <Component id="CountIslas1" max="32767" attributes="0"/>
+                  <Component id="showPuentes" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -62,7 +62,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="CountIslas" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="CountIslas1" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="showPuentes" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ActualizarRepositorio" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -129,12 +129,12 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="javax.swing.JButton" name="CountIslas1">
+    <Component class="javax.swing.JButton" name="showPuentes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Mostrar lista de Puentes"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CountIslas1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showPuentesActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
