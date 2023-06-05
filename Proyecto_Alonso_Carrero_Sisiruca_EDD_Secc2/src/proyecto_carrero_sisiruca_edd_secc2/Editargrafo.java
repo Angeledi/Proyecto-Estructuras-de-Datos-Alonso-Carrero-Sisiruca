@@ -61,13 +61,20 @@ public class Editargrafo extends javax.swing.JFrame {
         input1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 10)); // NOI18N
         jLabel1.setText("ID num");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 60, 20));
 
@@ -77,34 +84,34 @@ public class Editargrafo extends javax.swing.JFrame {
                 showActionPerformed(evt);
             }
         });
-        jPanel1.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        jPanel1.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, -1));
 
         output.setColumns(20);
         output.setRows(5);
         jScrollPane1.setViewportView(output);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 280, 220));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 290, 220));
 
         input.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputActionPerformed(evt);
             }
         });
-        jPanel1.add(input, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 50, -1));
+        jPanel1.add(input, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 50, -1));
 
         option1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 option1ActionPerformed(evt);
             }
         });
-        jPanel1.add(option1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 90, 20));
+        jPanel1.add(option1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 110, 20));
 
         option2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 option2ActionPerformed(evt);
             }
         });
-        jPanel1.add(option2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 90, 20));
+        jPanel1.add(option2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 110, 20));
 
         adybutton.setText("Agregar Adyacencia");
         adybutton.addActionListener(new java.awt.event.ActionListener() {
@@ -112,9 +119,9 @@ public class Editargrafo extends javax.swing.JFrame {
                 adybuttonActionPerformed(evt);
             }
         });
-        jPanel1.add(adybutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        jPanel1.add(adybutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        addnodo.setText("Agregar Nodo");
+        addnodo.setText("Agregar Usuario");
         addnodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addnodoActionPerformed(evt);
@@ -142,15 +149,43 @@ public class Editargrafo extends javax.swing.JFrame {
                 input1ActionPerformed(evt);
             }
         });
-        jPanel1.add(input1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 50, -1));
+        jPanel1.add(input1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 50, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel2.setText("RedGrafo Usuarios");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 140, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel3.setText("User name");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, 20));
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 8)); // NOI18N
+        jLabel3.setText("y presione \"Agregar Usuario\"");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, 20));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 10)); // NOI18N
+        jLabel4.setText("User name");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, 20));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 8)); // NOI18N
+        jLabel5.setText("Presione para crear Adyacencia");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 160, 20));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 0, 8)); // NOI18N
+        jLabel6.setText("Rellene los campos ");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 110, 20));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 8)); // NOI18N
+        jLabel7.setText("Usuario 1");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 110, 20));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 0, 8)); // NOI18N
+        jLabel8.setText("Usuario 2");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 110, 20));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Black", 0, 8)); // NOI18N
+        jLabel9.setText("Peso");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 50, 20));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 8)); // NOI18N
+        jLabel10.setText("Seleccione en los campos:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 120, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 370));
 
@@ -214,7 +249,7 @@ public class Editargrafo extends javax.swing.JFrame {
             //inicialización de variables
             String name = inputnodo.getText();
             String number = "";
-            number = input.getText();
+            number = input1.getText();
             Usuario aux = grafo.getList().getUhead();
             boolean value = true;
             //verifica con un for si el nuevo nodo está creado, si está creado, value va a ser=false y no va a poder continuar la operación
@@ -266,6 +301,8 @@ public class Editargrafo extends javax.swing.JFrame {
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         //cierra y abre la sig ventana
         PanelMenu window = new PanelMenu();
+        window.setGrafo(grafo);
+        window.setMostrarGrafo(grafo);
         window.show();
         this.dispose();
 
@@ -328,8 +365,15 @@ public class Editargrafo extends javax.swing.JFrame {
     private javax.swing.JTextField input1;
     private javax.swing.JTextField inputnodo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> option1;

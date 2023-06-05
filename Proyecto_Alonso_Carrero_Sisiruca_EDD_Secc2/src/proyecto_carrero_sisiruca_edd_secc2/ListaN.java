@@ -62,6 +62,14 @@ public class ListaN {
             }
         }
     }
+    public String listNToString() {
+        String print = "";
+        NodoN pointer = getHead();
+        for (int i = 0; i < getLength(); i++) {
+            print += pointer.getElement() + "\n";
+        }
+        return print;
+    }
     
 }
 

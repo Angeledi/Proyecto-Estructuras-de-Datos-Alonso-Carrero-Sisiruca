@@ -23,8 +23,8 @@ public class Main {
        // int num = grafo.islas_ReprofunDfs(grafo);
         //System.out.println(num);
         
-        //ListaN listap = grafo.identifyPuentes(grafo);
-        //listap.printListaN();
+        ListaN listap = grafo.identifyPuentes(grafo);
+        listap.printListaN();
        // System.out.println(listap.getHead().getElement());
        // System.out.println("hola");
        // MostrarGrafo m = new MostrarGrafo(grafo);

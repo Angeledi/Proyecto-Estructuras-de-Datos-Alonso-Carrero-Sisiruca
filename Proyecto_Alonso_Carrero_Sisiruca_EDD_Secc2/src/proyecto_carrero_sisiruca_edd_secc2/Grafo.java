@@ -160,14 +160,14 @@ public class Grafo {
         Usuario pointer_a = getList().getUhead();
         Usuario pointer_b = getList().getUhead();
         for (int i = 0; i < getNumVerts(); i++) {
-            print += pointer_a.getName() + "<-->";
+            print += pointer_a.getName() + " adyancente a: ";
             for (int j = 0; j < getNumVerts(); j++) {
                 if (getMatAd()[i][j] != 0) {
                     print += pointer_b.getName() + " " + getMatAd()[i][j] + "<-->";
 
                 }
                 if (j == getNumVerts() - 1) {
-                    print += "//";
+                    print += ".";
                 }
                 pointer_b = pointer_b.getNext();
 
@@ -177,6 +177,7 @@ public class Grafo {
             pointer_b = getList().getUhead();
         }
         return print;
+    
     }
 
     public void newArco(int a, int b, int peso) {
