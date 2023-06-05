@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://graphstream-project.org/
+HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/112361201/ede9ab80-c770-11ea-8e2e-10267328a56d?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230603%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230603T164517Z&X-Amz-Expires=300&X-Amz-Signature=d35d82616841a3c8b93d0266e6965c203a4e0897b223f4b8ba5723db9e68341c&X-Amz-SignedHeaders=host&actor_id=113349448&key_id=0&repo_id=112361201&response-content-disposition=attachment%3B%20filename%3Dgs-ui-swing-2.0.jar&response-content-type=application%2Foctet-stream
